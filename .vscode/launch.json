@@ -1,0 +1,45 @@
+{
+        // Use IntelliSense to learn about possible attributes.
+        // Hover to view descriptions of existing attributes.
+        // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+
+                {
+                        "type": "node",
+                        "request": "launch",
+                        "name": "Launch App.js for Lists folder",
+                        "program": "${workspaceRoot}/Lists/src/list.js"
+                },
+                {
+                        "type": "node",
+                        "request": "launch",
+                        "name": "Launch App.js for Stack folder",
+                        "program": "${workspaceRoot}/stacks/stack.js"
+                },
+                {
+                        "type": "node",
+                        "request": "launch",
+                        "name": "Launch Videos js for  List folder",
+                        "program": "${workspaceRoot}/videos/lists/singlyLinked.js"
+                },
+                {
+                        "type": "node",
+                        "request": "launch",
+                        "name": "Launch Videos Doubly linked js for  List folder",
+                        "program": "${workspaceRoot}/videos/lists/doublyLinked.js"
+                },
+                {
+                        "type": "node",
+                        "request": "launch",
+                        "name": "Launch Videos Stcks js for  List folder",
+                        "program": "${workspaceRoot}/videos/stacks/stacks.js"
+                },
+                {
+                        "type": "node",
+                        "request": "launch",
+                        "name": "Launch Videos BST js for  tree folder",
+                        "program": "${workspaceRoot}/videos/trees/bst.js"
+                }
+        ]
+}
