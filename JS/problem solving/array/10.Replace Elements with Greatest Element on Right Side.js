@@ -26,8 +26,7 @@ var replaceElements = function (arr) {
         }
         max = Math.max(max, currentItem);
     }
-    console.log(max)
-    console.log(arr)
+    return arr
 };
 
 replaceElements([17, 18, 5, 4, 6, 1]);
