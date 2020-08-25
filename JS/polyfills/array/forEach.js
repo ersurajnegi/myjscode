@@ -5,9 +5,6 @@ Array.prototype.forEach = function (func, thisArg) {
         throw new TypeError();
     }
     var length = this.length;
-    // while (++i !== length) {
-    //     func.call(thisArg, this[i], i, this)
-    // }
     for (var i = 0; i < length; i++) {
         func.call(thisArg, this[i], i, this)
     }

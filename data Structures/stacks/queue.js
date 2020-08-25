@@ -1,3 +1,16 @@
+/*
+	QUEUE : Queue is an abstract data structure, somewhat similar to Stacks. 
+		- Unlike stacks, a queue is open at both its ends. 
+		- One end is always used to insert data (enqueue) and the other is used to remove data (dequeue).
+		- Follows First-In-First-Out methodology,
+
+	BIG O:
+        - INSERTION -> O(1) 
+        - Removal -> O(1)
+        - Searching -> O(n)
+        - Access -> O(n)
+*/
+
 class Node {
 	constructor(value) {
 		this.value = value;
@@ -26,6 +39,7 @@ class Queue {
 	}
 	dequeue() {
 		if (!this.size) { return null; }
+		let temp = this.first;
 		if (this.size === 1) {
 			this.last = null;
 			this.first = null;

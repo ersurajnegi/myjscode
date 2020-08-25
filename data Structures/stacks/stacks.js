@@ -1,3 +1,16 @@
+/*
+	STACK : is an Abstract Data Type (ADT)
+		- allows operations at one end only
+		- FOllows LIFO principle -> LAST in FIRST out.
+
+
+	BIG O:
+        - INSERTION -> O(1) 
+        - Removal -> O(1)
+        - Searching -> O(n)
+        - Access -> O(n)
+*/
+// STACKS using LINKED LIST STARTS
 class Node {
 	constructor(value) {
 		this.value = value;
@@ -33,7 +46,46 @@ class Stack {
 			this.last = null;
 		}
 		this.first = this.first.next;
-		this.size--; 
+		this.size--;
 		return temp.value;
 	}
 }
+
+// STACKS using LINKED LIST ENDS
+
+
+// STACKS using Array Starts
+
+class StackWithArray {
+	constructor() {
+		this.dataStore = [];
+		this.top = 0;
+	}
+
+	push(element) {
+		this.dataStore[this.top++] = element;
+	}
+	pop() {
+		if (this.dataStore.length) {
+			--this.top;
+			return this.dataStore.pop();
+		}
+
+	}
+	peek() {
+		return this.dataStore[this.top - 1];
+	}
+	isEmpty() {
+		return this.dataStore.length === this.top;
+	}
+	clear() {
+		this.dataStore = [];
+		this.top = 0;
+	}
+	length() {
+		return this.top;
+	}
+}
+
+// STACKS using Array ENds
+

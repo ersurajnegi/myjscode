@@ -1,4 +1,17 @@
 
+/*
+    SINGLY LINKED LIST :   linked list is a linear data structure 
+        - DS that conatins a HEAD, TAIL and LENGTH property
+        - consists of NODES and each NODE has some value and a poninter to next or NULL
+
+    BIG O:
+        - INSERTION -> O(1) 
+        - Removal -> depends O(1) or O(n)
+        - Searching -> O(n)
+        - Access -> O(n)
+*/
+
+
 class LinkedList {
     constructor() {
         this.head = null;

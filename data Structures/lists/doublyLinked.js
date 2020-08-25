@@ -1,3 +1,18 @@
+
+/*
+
+    DOUBLY LINKED LIST -> Doubly Linked List is a variation of Linked list in which navigation is possible in both ways
+
+    
+    COMPARISON FOR SINGLE AND DOUBLY LINKED LIST
+     BIG O:
+        - INSERTION -> O(1) 
+        - Removal -> O(1)
+        - Searching -> O(n)
+        - Access -> O(n)
+
+*/
+
 class DoublyLinkedList {
     constructor() {
         this.head = null;
@@ -149,7 +164,7 @@ class DoublyLinkedList {
             if (currentNode.prev === null) {
                 currentNode.prev = nextNode;
                 currentNode.next = null;
-                this.tail = currentNode;                
+                this.tail = currentNode;
             }
             else if (currentNode.next === null) {
                 currentNode.next = currentNode.prev;

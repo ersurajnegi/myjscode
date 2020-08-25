@@ -1,4 +1,24 @@
+/*
+    TREES : NON-LINEAR data structure
+        - Tree represents the nodes connected by edges.
 
+    EXAMPLES: 
+        - DOM
+        - Network Routing
+        - AI
+        - OS Folder structure
+
+    BINARY SEARCH TREE : EACH node can have at most 2 CHILDRENS.
+        - Binary Search tree exhibits a special behavior. 
+            -- A node's left child must have a value less than its parent's value and the node's right child must have a value greater than its parent value.
+
+    TRAVERSAL :
+        - BREADTH FIRST SEARCH --> horizontal Search
+        - DEPTH FIRST SEARCH -> Vertical Search
+            -- PRE-ORDER : ROOT ==> LEFT ==> RIGHT
+            -- POST-ORDER : LEFT ==> RIGHT ==> ROOT
+            -- IN-ORDER : LEFT ==> ROOT ==> RIGHT
+*/
 
 class BinarySearchTree {
     constructor() {

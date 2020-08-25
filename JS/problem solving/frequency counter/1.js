@@ -1,6 +1,6 @@
 /*
     Freeuqnecy Counter:
-        - patterns uses opbject aor sets to collect values of value
+        - patterns uses object or sets to collect values of value
         - Often avoid the need for nested loops with arrays/strings
 
 */
