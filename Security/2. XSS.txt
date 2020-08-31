@@ -1,0 +1,19 @@
+Cross-Site Scripting Attacks:
+
+Cross-site scripting, also known as XSS, is basically a way to inject code that will perform actions in the user's browser on behalf of a website. Sometimes this is seen by the user and sometimes it can go totally unnoticed in the background. There are many different types of XSS vulnerabilities, below are two of the most common.
+
+Type of XSS Attack: Cross site scripting attacks are broadly classified into two categories.
+
+    1. Server XSS: 
+        -In this type of attack hacker attaches untrusted data with the HTML response. In this case, vulnerability is present at the server end and the browser just runs the script present in the response.
+
+    2. Client XSS: 
+        -In this type of XSS attack unsafe javascript is used to update the DOM data. If we add javascript code in DOM with a javascript call, such a javascript call is called an unsafe javascript call.
+
+
+Fix for XSS Attacks:
+    X-XSS-Protection: 0 | 1 | 1;mode=block;
+
+0: It disables the X-XSS-Protection.
+1: It is the by default directive and enables the X-XSS-Protection.
+1; mode=block: It enables the X-XSS-Protection. If the browser detects an attack, it will not render the page.

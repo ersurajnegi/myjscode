@@ -1,0 +1,21 @@
+Cross Site Request Forgery (CSRF)
+
+Overview
+    -Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated. With a little help of social engineering (such as sending a link via email or chat), an attacker may trick the users of a web application into executing actions of the attacker’s choosing. '
+
+
+
+Prevention:
+    - CSRF tokens should be generated on the server-side.
+
+
+How to Prevent Cross-Site Request Forgery Attacks
+    -An attacker can launch a CSRF attack when he knows which parameters and value combination are being used in a form. 
+     Therefore, by adding an additional parameter with a value that is unknown to the attacker and can be validated by the server, you can prevent CSRF attacks. Below is a list of some of the methods you can use to block cross-site request forgery attacks.
+
+
+    1. Implement an Anti-CSRF Token:
+        An anti-CSRF token is a type of server-side CSRF protection. It is a random string that is only known to the user’s browser and the web application. The anti-CSRF token is usually stored inside a session variable. On a page, it is typically in a hidden field that is sent with the request.
+    
+    2. Use the SameSite Flag in Cookies:
+        The SameSite flag in cookies is a relatively new method of preventing CSRF attacks and improving web application security. In the above scenario, we saw that https://attacker.com/ could send a POST request to https://example.com/ together with a session cookie. This session cookie is unique for every user, so the web application uses it to distinguish users and to determine if they are logged in.
