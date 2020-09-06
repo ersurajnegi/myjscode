@@ -15,17 +15,28 @@ Explanation: There is a cycle in the linked list, where tail connects to the sec
 
 */
 //Using Extra Space
-var hasCycle = function(head) {
-    if(!head) return false;
-    var faster = head;
-    var slower = head;
-    while (faster && faster.next) {
-        faster = faster.next.next;
-        slower = slower.next;
-        if (slower === faster) return true;
+var hasCycle = function (head) {
+    // The first round detect the circle
+    if (!head) return null
+    let fast = head
+    let slow = head
+
+    while (fast.next != null && fast.next.next != null) {
+
+        fast = fast.next.next;
+        slow = slow.next;
+        if (slow == fast) {
+            slow = head
+            while (fast != slow) {
+                fast = fast.next;
+                slow = slow.next;
+
+            }
+            return slow;
+        }
     }
-    return false;
-};
+
+    return null;
 
 
 //without using any extra aspace
