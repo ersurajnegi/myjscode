@@ -49,7 +49,7 @@ const debounceItFunc = function (callback, interval) {
         timeOut = setTimeout(() => {
             callback.call(this, ...arguments)
             clearTimeout(timeOut);
-        }, interval || 1000)
+        }, interval)
 
     }
 }

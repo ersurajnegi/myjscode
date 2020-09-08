@@ -3,7 +3,7 @@ Array.prototype.reduce = function (func, initialValue) {
     if (!((typeof func === 'Function' || typeof func === 'function') && this))
         throw new TypeError();
 
-    var accumulator = initialValue ? initialValue : undefined;
+    var accumulator = initialValue || undefined;
 
     for (var i = 0; i < this.length; i++) {
         if (accumulator !== undefined) {
