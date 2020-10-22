@@ -18,9 +18,7 @@ function test(str) {
         '{': '}',
         '(': ')'
     }
-
     let stack = [];
-
     for (let i = 0; i < str.length; i++) {
 
         if (leftside.includes(str[i])) {
