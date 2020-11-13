@@ -23,8 +23,6 @@ function same(arr1, arr2) {
     arr2.forEach(element => {
         arr2Object[element] = (arr2Object[element] || 0) + 1;
     });
-    console.log(arr1Object)
-    console.log(arr2Object)
 
     for (let key in arr1Object) {
         if (!(key * key in arr2Object)) { return false; }

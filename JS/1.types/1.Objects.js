@@ -10,14 +10,11 @@
     - Ways to create an Object:
         -- var a = {};
         -- var a = new Object();
-*/
 
-
-/*
-    -Object.assign()
+        -- Object.assign()
         -- copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
 
-    - Object.assign(target, ...sources)
+        -- Object.assign(target, ...sources)
 
     const obj = { a: 1 };
     const copy = Object.assign({}, obj);

@@ -8,8 +8,7 @@
         -AMD modules
         -CommonJS modules
         -ECMAScript Harmony modules
-        -We will be exploring the latter three of these options later on in the book in the section Modern Modular JavaScript Design Patterns.
-
+        
 The Module pattern is based in part on object literals and so it makes sense to refresh our knowledge of them first.
 *
 */
@@ -45,7 +44,7 @@ var Module = (function Employee() {
 Module.getNamePublic();
 
 /**
- * Here, other parts of the code are unable to directly read the value of our igetNamePrivate.
+ * Here, other parts of the code are unable to directly read the value of our getNamePrivate.
  * The name variable is actually fully shielded from our global scope so it acts just like a private variable would
  */
 
