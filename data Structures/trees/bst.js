@@ -12,8 +12,13 @@
         - Binary Search tree exhibits a special behavior. 
             -- A node's left child must have a value less than its parent's value and the node's right child must have a value greater than its parent value.
 
+
+    BIG O:
+        - INSERTION -> O(log N) 
+        - Searching -> O(log N) 
+
     TRAVERSAL :
-        - BREADTH FIRST SEARCH --> horizontal Search
+        - BREADTH FIRST SEARCH --> horizontal Search (level search)
         - DEPTH FIRST SEARCH -> Vertical Search
             -- PRE-ORDER : ROOT ==> LEFT ==> RIGHT
             -- POST-ORDER : LEFT ==> RIGHT ==> ROOT
@@ -76,7 +81,7 @@ class BinarySearchTree {
         let queue = [];
         let visited = [];
         queue.push(this.root);
-        //thisi
+        
         while (queue.length > 0) {
             let currentNode = queue.shift();
             if (currentNode.left) {
@@ -227,11 +232,11 @@ var bst = new BinarySearchTree();
 
 /**
  *					------------------10---------------------
-					|					|
+                    |					|
 *					---6		      			---15
 
- 				3		8				    			20
-												  
+                    3		8				    			20
+                                                  
  *
  */
 

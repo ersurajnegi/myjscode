@@ -7,6 +7,12 @@
         -> Create multiple sizes and use scrset with picture
         -> use CDN for images
 
+        <picture>
+            <source media="(min-width: 650px)" srcset="img_food.jpg">
+            <source media="(min-width: 465px)" srcset="img_car.jpg">
+            <img src="img_girl.jpg">
+        </picture>
+
     3. Render Blocking -> any files which is inserted in html, browser need to do below steps:
             ->> download, parse, execute--- till then rendering will be blocked.
         -> ship only the code which is needed to load the hompages. (check COVERAGE tab in chrome for more info).
@@ -37,7 +43,7 @@
 
         No more serving all of that legacy code to work on Internet Explorer to newer versions of Edge!
 
-    8. 
+    8.
 */
 
 
