@@ -81,7 +81,7 @@ class BinarySearchTree {
         let queue = [];
         let visited = [];
         queue.push(this.root);
-        
+
         while (queue.length > 0) {
             let currentNode = queue.shift();
             if (currentNode.left) {
@@ -215,6 +215,15 @@ class BinarySearchTree {
         }
         traverse(currentNode);
         return edges;
+    }
+
+    height(node) {
+        if (!node) { return 0 }
+
+        var lHeight = height(node.left);
+        var rHeight = height(node.right);
+
+        return Math.max(lHeight, rHeight) + 1;
     }
 }
 class Node {

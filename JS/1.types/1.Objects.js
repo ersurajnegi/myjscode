@@ -12,7 +12,7 @@
         -- var a = new Object();
 
         -- Object.assign()
-        -- copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
+            --- copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
 
         -- Object.assign(target, ...sources)
 
