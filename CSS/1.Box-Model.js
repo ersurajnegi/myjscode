@@ -34,6 +34,7 @@
             height: 80px;
             padding: 20px;
             border: 8px solid red;
+            margin: 10px;
             background: yellow;
         }
 

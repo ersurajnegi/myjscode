@@ -128,22 +128,23 @@ class Graph {
         return false
     };
 
+    buildGraph = (edges) => {
+        let graph = {};
+        for (let edge of edges) {
+            const [a, b] = edge;
+            if (!(a in graph)) graph[a] = [];
+            if (!(b in graph)) graph[b] = [];
+            graph[a].push(b);
+            graph[b].push(a);
+        }
+        return graph;
+    }
     /**
      Write a function, undirectedPath, that takes in an array of edges for an undirected graph and two nodes (nodeA, nodeB). 
      The function should return a boolean indicating whether or not there exists a path between nodeA and nodeB.
     */
     undirectedPath = (edges, nodeA, nodeB) => {
-        const buildGraph = (edges) => {
-            let graph = {};
-            for (let edge of edges) {
-                const [a, b] = edge;
-                if (!(a in graph)) graph[a] = [];
-                if (!(b in graph)) graph[b] = [];
-                graph[a].push(b);
-                graph[b].push(a);
-            }
-            return graph;
-        }
+
 
         const hasPath = (graph, src, dst, visited) => {
             if (src === dst) return true;
@@ -160,7 +161,63 @@ class Graph {
         const graph = buildGraph(edges);
         return hasPath(graph, nodeA, nodeB, visited)
     };
+
+    /*
+        Write a function, connectedComponentsCount, 
+        that takes in the adjacency list of an undirected graph. 
+        The function should return the number of connected components within the graph
+    */
+    connectedComponentsCount = (graph) => {
+        function explore(graph, current, visited) {
+            if (visited.has(String(current))) return false;
+            visited.add(String(current));
+            for (let neighbor of graph[current]) {
+                explore(graph, neighbor, visited);
+            }
+
+            return true;
+        };
+        const visited = new Set();
+        let count = 0;
+        for (let node in graph) {
+            if (explore(graph, node, visited) === true) {
+                count += 1;
+            }
+        }
+        return count;
+    };
+
+    /**
+     SHORTEST PATH:
+        Write a function, shortestPath, that takes in an array of edges for an undirected graph and two nodes (nodeA, nodeB). 
+        The function should return the length of the shortest path between A and B. 
+        Consider the length as the number of edges in the path, not the number of nodes. If there is no path between A and B, then return -1.
+    */
+    shortestPath = (edges, nodeA, nodeB) => {
+        let graph = buildGraph(edges);
+
+        let visited = new Set([nodeA]);
+        let queue = [[nodeA, 0]];
+
+        while (queue.length) {
+            let [node, distance] = queue.shift();
+
+            if (node === nodeB) return distance;
+
+            for (let neighbor of graph[node]) {
+                if (!visited.has(neighbor)) {
+                    visited.add(neighbor);
+                    queue.push([neighbor, distance + 1]);
+                }
+            }
+
+        }
+        return -1
+    };
+
 }
+
+
 
 
 

@@ -42,3 +42,39 @@ console.log(a.getRandomNumber() === b.getRandomNumber());
 
 
 //Init function is called only and a.getRandomNumber = b.getRandomNumber which means only one Instance is created
+
+
+
+
+class Singleton {
+    constructor() {
+        if (Singleton._instance) {
+            return MyClass._instance
+        }
+        Singleton._instance = this;
+    }
+}
+
+var instanceOne = new Singleton() // Executes succesfully
+var instanceTwo = new Singleton() // Throws error
+
+console.log(instanceOne === instanceOne)
+
+
+
+class Singleton {
+
+    constructor() {
+        Singleton.instance = this;
+    }
+
+    static getInstance() {
+        if (!Singleton.instance) {
+            Singleton.instance = new Singleton();
+        }
+        return Singleton.instance;
+    }
+}
+
+console.log(Singleton.getInstance());
+console.log(Singleton.getInstance());
