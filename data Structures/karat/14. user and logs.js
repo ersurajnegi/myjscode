@@ -58,4 +58,45 @@ test(logs1);
 
 
 
-//QUESTION 2:
+//QUESTION 2: find max used log within interval of 5 minutes and return the {resourceName, count}
+
+//resource _3 , 3
+/*
+    //sort  
+    { resourced_1 : []}
+    //
+*/
+function maxUsedResource(records) {
+    if (!records || records.length === 0) {
+        return [];
+    }
+    const times = new Map();
+    for (const [timestamp, , resource] of records) {
+        let time = parseInt(timestamp);
+        if (times.has(resource)) {
+            times.get(resource).push(time);
+        } else {
+            times.set(resource, [time]);
+        }
+    }
+    let max = 0;
+    let maxResource = '';
+    for (const [resource, timestamps] of times) {
+        timestamps.sort((a, b) => a - b);
+        let start = 0;
+        let end = 1;
+        while (start < timestamps.length && end < timestamps.length) {
+            if (timestamps[end] - timestamps[start] <= 300) {
+                if (max < end + 1 - start) {
+                    max = end + 1 - start;
+                    maxResource = resource;
+                }
+                end++;
+            } else {
+                start++;
+            }
+        }
+    }
+
+    return { max, maxResource };
+}

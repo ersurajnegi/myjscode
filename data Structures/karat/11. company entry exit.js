@@ -136,11 +136,17 @@ function invalidBadgeRecords(records) {
 //QUESTION 2:
 /**
  给 list of [name, time], time is string format: '1300' //下午一点
-return: list of names and the times where their swipe badges within one hour. if there are multiple intervals that satisfy the condition, return any one of them.
+return: list of names and the times where their swipe badges within one hour. 
+if there are multiple intervals that satisfy the condition, return any one of them.
 name1: time1, time2, time3...
 name2: time1, time2, time3, time4, time5...
 example:
-input: [['James', '1300'], ['Martha', '1600'], ['Martha', '1620'], ['Martha', '1530']] 
+input: [
+    ['James', '1300'], 
+    ['Martha', '1600'], 
+    ['Martha', '1620'], 
+    ['Martha', '1530']
+] 
 output: {
 'Martha': ['1600', '1620', '1530']
 }

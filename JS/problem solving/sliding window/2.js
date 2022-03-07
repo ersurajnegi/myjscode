@@ -1,5 +1,6 @@
 /*
-    <p>Given an array of integers and a number, write a function called <b>maxSubarraySum</b>, which finds the maximum sum of a subarray with the length of the number passed to the function. </p>
+    <p>Given an array of integers and a number, write a function called <b>maxSubarraySum</b>, 
+    which finds the maximum sum of a subarray with the length of the number passed to the function. </p>
 */
 
 function maxSubarraySum(arr, num) {
