@@ -72,6 +72,23 @@ function longestCommonContinuousHistory(history1, history2) {
         }
     }
     return { result, count };
+
+    /**
+     * //2nd option withour an array. Using Map object
+     const memo = new Map();
+    for (let i = 1; i <= history1.length; i++) {
+        for (let j = 1; j <= history2.length; j++) {
+        if (history1[i - 1] === history2[j - 1]) {
+            let key = `${i},${j}`;
+            memo.set(key, 1 + (memo.get(`${i - 1},${j - 1}`) || 0));
+            if (memo.get(key) > count) {
+            count = memo.get(key);
+            result = history1.slice(i - count, i);
+            }
+        }
+        }
+    }
+     */
 }
 
 console.log(
