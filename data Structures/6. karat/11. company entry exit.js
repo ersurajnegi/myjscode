@@ -5,7 +5,8 @@
 // 1. All employees who didn't use their badge while exiting the room - 
 // they recorded an enter without a matching exit. (All employees are required to leave the room before the log ends.)
 
-// 2. All employees who didn't use their badge while entering the room - they recorded an exit without a matching enter. (The room is empty when the log begins.)
+// 2. All employees who didn't use their badge while entering the room - they recorded an exit without a matching enter. 
+// (The room is empty when the log begins.)
 
 // Each collection should contain no duplicates, regardless of how many times a given employee matches the criteria for belonging to it.
 
@@ -86,11 +87,6 @@
 
 // Given a list of people who enter and exit, find the people who entered without
 // their badge and who exited without their badge.
-
-// 作者：关辰晓
-// 链接：https://www.jianshu.com/p/fdbcba5fe5bc
-// 来源：简书
-// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 //QUESTION 1:
 
 function invalidBadgeRecords(records) {
@@ -191,4 +187,39 @@ function timeDifference(a, b) {
     const aMinute = a % 100;
     const bMinute = b % 100;
     return aHour * 60 + aMinute - (bHour * 60 + bMinute);
+}
+
+
+///another approach:
+function frequentAccess(records) {
+    if (!records || records.length === 0) {
+        return [];
+    }
+    const result = [];
+    const times = new Map();
+    for (const [name, timestamp] of records) {
+        if (times.has(name)) {
+            times.get(name).push(parseInt(timestamp));
+        } else {
+            times.set(name, [parseInt(timestamp)]);
+        }
+    }
+    for (const [name, timestamps] of times) {
+        timestamps.sort((a, b) => a - b);
+        let start = 0,
+            end = 1;
+        let timewindow = [timestamps[start]];
+        while (start < timestamps.length && end < timestamps.length) {
+            if (timestamps[end] - timestamps[start] < 60) {
+                timewindow.push(timestamps[end]);
+                end++;
+            } else {
+                start++;
+            }
+        }
+        if (timewindow.length >= 3) {
+            result.push([name, timewindow]);
+        }
+    }
+    return result;
 }

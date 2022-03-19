@@ -36,7 +36,7 @@ function longestCommonContinuousHistory(history1, history2) {
             }
         }
     }
-    return result;
+    return { result, count };
 }
 
 console.log(
