@@ -11,6 +11,7 @@ function test(input) {
         let [count, str] = item.split(', ');
         count = Number(count);
         returnMap.set(str, returnMap.get(str) ? returnMap.get(str) + count : count);
+        //returnMap.set(str, (returnMap.get(str) || 0)  + count);
         for (let i = 0; i < str.length; i++) {
             if (str[i] === '.') {
                 let subStr = str.substring(i + 1, str.length);
@@ -57,6 +58,22 @@ function longestCommonContinuousHistory(history1, history2) {
     const memo = Array.from({ length: history1.length + 1 }, () =>
         Array.from({ length: history2.length }, () => 0)
     );
+    //wayf creating 2d array
+    /*
+        let a = Array.from({length:4}, ()=>0)
+        let b = Array.from({length:4}, ()=>a);
+
+        console.log(a, b)
+
+    */
+    // var a = []
+    // for (let i = 0; i < 4; i++) {
+    //     a.push(0)
+    // }
+    // var b = []
+    // for (let i = 0; i < 4; i++) {
+    //     b.push(a)
+    // }
     //  let Darray = new Array(history1.length + 1)
     // .fill(0)
     // .map((item) => new Array(history2.length).fill(0));
