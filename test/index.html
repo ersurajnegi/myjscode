@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes example {
+        0% {
+            background-color: red;
+            left: 0px;
+            top: 0px;
+        }
+
+        25% {
+            background-color: yellow;
+            left: 200px;
+            top: 0px;
+        }
+
+        50% {
+            background-color: blue;
+            left: 200px;
+            top: 200px;
+        }
+
+        75% {
+            background-color: green;
+            left: 0px;
+            top: 200px;
+        }
+
+        100% {
+            background-color: red;
+            left: 0px;
+            top: 0px;
+        }
+    }
+
+    button {
+        margin-bottom: 30px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./display-flex.css">
+    <title>Flex Box</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <h1></h1>
+            <img />
+            <button id="test">Click me</button>
+        </header>
+        <div class="container">
+        </div>
+    </section>
+    <script>
+        
+        var button = document.getElementById('test');
+        button.addEventListener('click', function (event) {
+            var options = {
+                method: 'GET',
+                mode: 'cors',
+                cache: 'default'
+            };
+            fetch(
+                "https://image.shutterstock.com/image-photo/silhouette-children-riding-on-buffalo-600w-369723320.jpg"
+            ).then(item => {
+                item.arrayBuffer().then((buffer) => {
+                    var base64Flag = 'data:image/jpeg;base64,';
+                    var imageStr = arrayBufferToBase64(buffer);
+
+                    document.querySelector('img').src = base64Flag + imageStr;
+                });
+
+            });
+        })
+
+        function arrayBufferToBase64(buffer) {
+            var binary = '';
+            var bytes = [].slice.call(new Uint8Array(buffer));
+
+            bytes.forEach((b) => binary += String.fromCharCode(b));
+
+            return window.btoa(binary);
+        };
+    </script>
+</body>
+
+</html>

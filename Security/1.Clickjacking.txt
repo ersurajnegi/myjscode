@@ -1,0 +1,23 @@
+ Clickjacking is an attack that occurs when an attacker uses a transparent iframe in a window to trick a user into clicking on a CTA, such as a button or link, to another server in which they have an identical looking window. 
+ 
+ The attacker in a sense hijacks the clicks meant for the original server and sends them to the other server. 
+ 
+ This is an attack on both the visitor themselves and on the server.
+
+
+
+
+Fix for Clickjacking:
+
+    -There are two possible directives for X-Frame-Options:
+
+        --X-Frame-Options: DENY
+        --X-Frame-Options: SAMEORIGIN
+
+
+
+1. deny directive :
+    - The deny directive completely disables the loading of the page in a frame, regardless of what site is trying. 
+
+2. sameorigin directive:
+    - The sameorigin directive allows the page to be loaded in a frame on the same origin as the page itself. 
