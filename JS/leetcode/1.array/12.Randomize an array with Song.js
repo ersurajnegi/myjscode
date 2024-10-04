@@ -15,8 +15,8 @@ function random(array) {
 
 /*
     -- create a music libray which will have songs.
-    -- Play random songs from the library
-    -- if all the songs are done. play songs randomly again
+    -- Play songs from the library sequentially
+    -- if all the songs are done, start playing songs again but not in the same order/randomly
 
 */
 
